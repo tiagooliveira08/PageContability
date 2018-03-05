@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Contabilidade</title>
+	<link rel="stylesheet" href="public/css/style.css">
+</head>
+
+<body>
+	<section class="calc">
+		<div class="calc__header">
+			<div class="calc__header">
+				<h3 class="calc__header__title">Veja o quanto você pode economizar:</h3>
+				<p class="calc__header__subtitle align-center">Simule a mensalidade. Nossos clientes economizam em média 90% em contabilidade.</p>
+			</div>
+		</div>
+
+		<div class="calc__body">
+			<div class="calc__body__block-left">
+				<div class="block_left__group align-center">
+					<input type="radio" name="tipo" value="Simples nacional">Simples Nacional
+					<input type="radio" name="tipo" value="Lucro presumido">Lucro presumido
+					<p class="align-center block_left__group__text-description">Quanto você paga de contabilidade por mês?</p>
+				</div>
+
+				<div class="block_left__group">
+					<span class="block_left__group__text">R$</span>
+					<input type="number" min="0" max="4000" value="490" class="block_left__group__number-form-first" data-js="pagamento" />
+				</div>
+
+
+				<p class="align-center block_left__group__text-description">Quantos sócios têm sua empresa?</p>
+				<div class="block_left__group">
+					<input type="number" min="0" max="10" value="1" class="block_left__group__number-form" data-js="socios" />
+				</div>
+
+				<p class="align-center block_left__group__text-description">Quantos funcionários?</p>
+				<div class="block_left__group">
+					<input type="number" min="0" max="10" value="0" class="block_left__group__number-form" data-js="funcionarios"/>
+				</div>
+				<div class="block_left__group ">
+					<p class="align-center block_left__group__text-description	">Qual o faturamento mensal?</p>
+					<select data-js="selection">
+						<option value="1" selected>até R$25.000/mês</option>
+						<option value="2">de R$25.000 até R$50.000/mês</option>
+						<option value="3">de R$50.000 até R$100.000/mês</option>
+						<option value="4">de R$100.000 até R$150.000/mês</option>
+						<option value="5">de R$150.000 até R$200.000/mês</option>
+						<option value="6">acima de R$$200.000/mês</option>
+					</select>
+				</div>
+				<div class="block_left__group">
+					<p class="align-center block_left__about__group__text">Preencha com os dados de sua empresa e veja ao lado sua economia.</p>
+				</div>
+
+			</div>
+			<div class="calc__body__block-right">
+				<div class="block__right__economy">
+					<div class="align-center right__economy__text-opacity">Você irá
+						<b class="opacity8">economizar:</b>
+					</div>
+					<div class="align-center">
+						<span>R$</span>
+						<span class="block__right__economy__value" data-js="economy">2.159</span>
+						<span>/ano</span>
+					</div>
+				</div>
+				<div class="block__right__mensality">
+					<div class="align-center right__economy__text-opacity">Sua
+						<b class="opacity8">mensalidade</b> será:
+					</div>
+					<div class="align-center align-center--value">
+						<span>R$</span>
+						<span class="block__right__economy__value" data-js="mensalidade"></span>
+						<span>/mês</span>
+					</div>
+				</div>
+
+				<div class="block__right__about">
+					<h3 class="align-center block-right__about__title">Não combramos 13º</h3>
+					<P class="block-right__about__subtitle">Não precisamos de nenhuma informação do seu contador atual para o cadastro.</P>
+					<p class="align-center margint20">
+						<button class="btn btn-blue">O que está incluso?</button>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+
+</body>
+<script src="./src/js/script.js"></script>
+
+</html>
