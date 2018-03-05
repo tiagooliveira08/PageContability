@@ -22,7 +22,6 @@
     $selection.addEventListener("change", calcTotal, false);
 
     function calcPagamento() {
-        console.log("hey");
         $pagamentoValue.value = verificarMax($pagamentoValue.value, 4000);
         calcTotal();
     }
@@ -35,37 +34,50 @@
     function calcFuncionarios() {
         $funcionariosValue.value = verificarMax($funcionariosValue.value, 10);
         calcTotal();
-
     }
 
 
     function calcTotal() {
-        var ltotalSocios;
-        var ltotalFuncionarios;
-        var ltotalFaturamento;
-        var lvarTemp = $pagamentoValue.value * 13;
+        var ltotalSocios = 0;
+        var ltotalFuncionarios = 0;
+        var ltotalFaturamento = 0;
+        var acumulandoAnual = $pagamentoValue.value * 13;
+        var valorReservado = $pagamentoValue.value;
+        var mensalidadeSimples = 97;
+
 
 
         if ($sociosValue.value > 1) {
             ltotalSocios = $sociosValue.value * 30;
-            lvarTemp += ltotalSocios;
+            acumulandoAnual += ltotalSocios;
         }
         if ($funcionariosValue.value >= 1) {
             ltotalFuncionarios = $funcionariosValue.value * 50;
-            lvarTemp += ltotalFuncionarios;
+            acumulandoAnual += ltotalFuncionarios;
         }
 
-        ltotalFaturamento = $selection.value * 120
+        ltotalFaturamento = $selection.value * 120;
+    
+        acumulandoAnual += ltotalFaturamento;
+        mensalidadeSimples += ltotalFaturamento + ltotalSocios + ltotalFuncionarios;
 
-        lvarTemp += ltotalFaturamento;
+        var valorFinalSimples = (mensalidadeSimples - valorReservado) * 12;
+        
+       
+        console.log("Mensalidade simples: "+mensalidadeSimples);
+        console.log("Valor reservado: "+valorReservado);
+        console.log("valor final Simples: " +valorFinalSimples);
+
+        if(valorFinalSimples <= 0){
+            $mensality.textContent = formataDinheiro(97);
+        } else{
+            $economy.textContent = formataDinheiro(acumulandoAnual);
+            $mensality.textContent = formataDinheiro(valorFinalSimples);
+        }
+
+               
 
 
-        $economy.textContent = formataDinheiro(lvarTemp);
-
-        test = ltotalSocios + ltotalFuncionarios;
-        setTimeout(() => {
-            console.log(ltotalSocios);
-        }, 1000);
 
 
     }
@@ -74,8 +86,6 @@
     function formataDinheiro(n) {
         return n.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, "$1.");
     }
-
-
 
 
     function verificarMax(input, max) {
@@ -87,7 +97,5 @@
         }
 
     }
-
-
 
 })(window, document)

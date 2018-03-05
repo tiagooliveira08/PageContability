@@ -52,6 +52,7 @@ $low: 400px;
     border-radius: 6px;
     padding: 20px;
     text-align: left;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
     @media(max-width: $hight) {
         width:40%;
     }
@@ -94,6 +95,10 @@ $low: 400px;
     color: #555555;
     font-size: 25px !important;
     outline: 0;
+
+    @media(max-width: $medium){
+        width: 70%;
+    }
 }
 
 .block_left__group__number-form {
@@ -120,7 +125,6 @@ $low: 400px;
 }
 
 .calc__body__block-right {
-    margin-right: 200px;
     min-height: 500px;
     width: 30%;
 
