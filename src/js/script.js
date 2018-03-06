@@ -38,42 +38,46 @@
 
 
     function calcTotal() {
-        var ltotalSocios = 0;
-        var ltotalFuncionarios = 0;
+        var valorAdicionarSocios = 0;
+        var valorAdicionarFuncionario = 0;
         var ltotalFaturamento = 0;
-        var acumulandoAnual = $pagamentoValue.value * 13;
         var valorReservado = $pagamentoValue.value;
         var mensalidadeSimples = 97;
 
-
-
-        if ($sociosValue.value > 1) {
-            ltotalSocios = $sociosValue.value * 30;
-            acumulandoAnual += ltotalSocios;
+        for(var i = 1; i < $sociosValue.value; i++){
+            mensalidadeSimples += 30;
+            console.log(valorAdicionarSocios);
         }
-        if ($funcionariosValue.value >= 1) {
-            ltotalFuncionarios = $funcionariosValue.value * 50;
-            acumulandoAnual += ltotalFuncionarios;
+        for(var i = 0; i < $funcionariosValue.value; i++){
+            mensalidadeSimples += 50;
         }
-
-        ltotalFaturamento = $selection.value * 120;
-    
-        acumulandoAnual += ltotalFaturamento;
-        mensalidadeSimples += ltotalFaturamento + ltotalSocios + ltotalFuncionarios;
-
-        var valorFinalSimples = (mensalidadeSimples - valorReservado) * 12;
         
-       
-        console.log("Mensalidade simples: "+mensalidadeSimples);
-        console.log("Valor reservado: "+valorReservado);
-        console.log("valor final Simples: " +valorFinalSimples);
-
-        if(valorFinalSimples <= 0){
-            $mensality.textContent = formataDinheiro(97);
-        } else{
-            $economy.textContent = formataDinheiro(acumulandoAnual);
-            $mensality.textContent = formataDinheiro(valorFinalSimples);
+        for(var i = 1; i < $selection.value; i++){
+            mensalidadeSimples += 120;
         }
+        
+        var mensalidadeSimplesMult = mensalidadeSimples * 12;
+        var acumulandoAnual = $pagamentoValue.value * 13;
+
+        var Economia = acumulandoAnual - mensalidadeSimplesMult
+
+        $economy.textContent = formataDinheiro(Economia);
+        $mensality.textContent = formataDinheiro(mensalidadeSimples);
+
+        mensalidadeSimples = 97;
+
+
+
+
+
+
+
+
+
+
+
+     
+
 
                
 
