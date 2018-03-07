@@ -12,7 +12,7 @@ const uglify = require("gulp-uglify");
 
 
 gulp.task("sass", () => (
-    gulp.src("src/scss/**")
+    gulp.src("src/scss/**/*")
     .pipe(sass({
         outputStyle: "compressed"
     }).on("error", sass.logError))

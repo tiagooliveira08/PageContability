@@ -6,6 +6,8 @@
     var $sociosValue = doc.querySelector("[data-js='socios']");
     var $funcionariosValue = doc.querySelector("[data-js='funcionarios']");
     var $selection = doc.querySelector("[data-js='selection']");
+    var $radioBoxOne = doc.querySelector("[data-js='oneRadio']");
+    var $radioBoxTwo = doc.querySelector("[data-js='twoRadio']");
 
     calcTotal();
 
@@ -19,7 +21,10 @@
     $funcionariosValue.addEventListener("keyup", calcFuncionarios, false);
     $funcionariosValue.addEventListener("change", calcFuncionarios, false);
 
-    $selection.addEventListener("change", calcTotal, false);
+    $(".SlectBox").on("change", calcTotal);
+    $radioBoxOne.addEventListener("change", calcTotal, false);
+    $radioBoxTwo.addEventListener("change", calcTotal, false);
+
 
     function calcPagamento() {
         $pagamentoValue.value = verificarMax($pagamentoValue.value, 4000);
@@ -42,20 +47,28 @@
         var valorAdicionarFuncionario = 0;
         var ltotalFaturamento = 0;
         var valorReservado = $pagamentoValue.value;
-        var mensalidadeSimples = 97;
+        var mensalidadeSimples;
 
-        for(var i = 1; i < $sociosValue.value; i++){
+        if ($radioBoxOne.checked) {
+            mensalidadeSimples = 97;
+        } else if ($radioBoxTwo.checked) {
+            mensalidadeSimples = 217;
+        }
+
+
+        for (var i = 1; i < $sociosValue.value; i++) {
             mensalidadeSimples += 30;
             console.log(valorAdicionarSocios);
         }
-        for(var i = 0; i < $funcionariosValue.value; i++){
+        for (var i = 0; i < $funcionariosValue.value; i++) {
             mensalidadeSimples += 50;
         }
-        
-        for(var i = 1; i < $selection.value; i++){
+
+        for (var i = 1; i < $(".SlectBox").val(); i++) {
             mensalidadeSimples += 120;
+            console.log(mensalidadeSimples);
         }
-        
+
         var mensalidadeSimplesMult = mensalidadeSimples * 12;
         var acumulandoAnual = $pagamentoValue.value * 13;
 
@@ -64,24 +77,8 @@
         $economy.textContent = formataDinheiro(Economia);
         $mensality.textContent = formataDinheiro(mensalidadeSimples);
 
-        mensalidadeSimples = 97;
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-               
-
-
+        if (Economia <= 0)
+            $economy.textContent = formataDinheiro(0);
 
 
     }
@@ -101,5 +98,8 @@
         }
 
     }
+    $('select').niceSelect();
+
+
 
 })(window, document)

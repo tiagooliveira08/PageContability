@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Contabilidade</title>
 	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" href="public/css/nice-select.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -21,10 +22,15 @@
 		<div class="calc__body">
 			<div class="calc__body__block-left">
 				<div class="block_left__group align-center">
-					<input type="radio" name="tipo" value="Simples nacional">Simples Nacional
-					<input type="radio" name="tipo" value="Lucro presumido">Lucro presumido
+					<div class="div__check">
+						<input type="radio" name="simples" value="Simples nacional" id="r1" data-js="oneRadio" checked>
+						<label for="r1" class="radioCheck">Simples nacional</label>
+						<input type="radio" name="simples" value="Lucro presumido" id="r2" data-js="twoRadio">
+						<label for="r2" class="radioCheck">Lucro presumido</label>
+					</div>
 					<p class="align-center block_left__group__text-description">Quanto você paga de contabilidade por mês?</p>
 				</div>
+
 
 				<div class="block_left__group">
 					<span class="block_left__group__text">R$</span>
@@ -39,18 +45,20 @@
 
 				<p class="align-center block_left__group__text-description">Quantos funcionários?</p>
 				<div class="block_left__group">
-					<input type="number" min="0" max="10" value="0" class="block_left__group__number-form" data-js="funcionarios"/>
+					<input type="number" min="0" max="10" value="0" class="block_left__group__number-form" data-js="funcionarios" />
 				</div>
 				<div class="block_left__group ">
 					<p class="align-center block_left__group__text-description	">Qual o faturamento mensal?</p>
-					<select data-js="selection">
-						<option value="1" selected>até R$25.000/mês</option>
-						<option value="2">de R$25.000 até R$50.000/mês</option>
-						<option value="3">de R$50.000 até R$100.000/mês</option>
-						<option value="4">de R$100.000 até R$150.000/mês</option>
-						<option value="5">de R$150.000 até R$200.000/mês</option>
-						<option value="6">acima de R$$200.000/mês</option>
-					</select>
+					<div class="flex-center">
+						<select data-js="selection" class="select SlectBox">
+							<option value="1">até R$25.000/mês</option>
+							<option value="2">de R$25.000 até R$50.000/mês</option>
+							<option value="3">de R$50.000 até R$100.000/mês</option>
+							<option value="4">de R$100.000 até R$150.000/mês</option>
+							<option value="5">de R$150.000 até R$200.000/mês</option>
+							<option value="6">acima de R$$200.000/mês</option>
+						</select>
+					</div>
 				</div>
 				<div class="block_left__group">
 					<p class="align-center block_left__about__group__text">Preencha com os dados de sua empresa e veja ao lado sua economia.</p>
@@ -63,9 +71,9 @@
 						<b class="opacity8">economizar:</b>
 					</div>
 					<div class="align-center">
-						<span>R$</span>
+						<span class="money">R$</span>
 						<span class="block__right__economy__value" data-js="economy"></span>
-						<span>/ano</span>
+						<span class="money">/ano</span>
 					</div>
 				</div>
 				<div class="block__right__mensality">
@@ -73,9 +81,9 @@
 						<b class="opacity8">mensalidade</b> será:
 					</div>
 					<div class="align-center align-center--value">
-						<span>R$</span>
+						<span class="money">R$</span>
 						<span class="block__right__economy__value" data-js="mensalidade"></span>
-						<span>/mês</span>
+						<span class="money">/mês</span>
 					</div>
 				</div>
 
@@ -93,6 +101,9 @@
 	</section>
 
 </body>
-<script src="./src/js/script.js"></script>
+<script src="public/js/jquery.js"></script>
+<script src="public/js/jquery.nice-select.min.js"></script>
+<script src="public/js/script.min.js"></script>
+
 
 </html>
