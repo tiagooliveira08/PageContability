@@ -1,0 +1,57 @@
+$hight: 1000px;
+$medium: 800px;
+$low: 400px;
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+.calc {
+    min-height: 100%;
+    width: 100%;
+    background-color: #3F607F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding-bottom: 40px;
+    font-family: "Helvetica";
+}
+
+.calc__body {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+body,
+html {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+  .form-group{
+      margin-bottom: 20px;
+  }
+
+
+
+
+
+
+@import "components/class.scss";
+@import "components/headercalc.scss";
+@import "components/blockleft.scss";
+@import "components/blockright.scss";
+@import "components/btn.scss";
+@import "components/radiobutton.scss";

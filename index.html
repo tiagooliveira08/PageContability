@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Contabilidade</title>
 	<link rel="stylesheet" href="public/css/nice-select.css">
-	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" href="public/css/main.css">
 	<link rel="stylesheet" href="public/css/fontawesome-all.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -22,41 +22,46 @@
 			<div class="calc__body__block-left">
 				<div class="block_left__group align-center">
 					<div class="div__check">
-						<div>
-							<input type="radio" name="simples" value="Simples nacional" id="r1" data-js="oneRadio" checked>
-							<label for="r1" class="radioCheck">Simples nacional</label>
-						</div>
-						<div>
-							<input type="radio" name="simples" value="Lucro presumido" id="r2" data-js="twoRadio">
-							<label for="r2" class="radioCheck">Lucro presumido</label>
+						<div class="div__check">
+							<div class="switch-field">
+								<input type="radio" id="switch_left" name="switch_2" id="r1" value="yes" data-js="oneRadio" checked/>
+								<label for="switch_left">Simples Nacional</label>
+								<input type="radio" id="switch_right" name="switch_2" id="r2" value="no" data-js="twoRadio" />
+								<label for="switch_right">Lucro Presumido</label>
+							</div>
 						</div>
 					</div>
-					<p class="align-center block_left__group__text-description">Quanto você paga de contabilidade por mês?</p>
 				</div>
 
 
+				<div class="form-group">
+					<label class="align-center block_left__group__text-description">Quanto você paga de contabilidade por mês?</label>
+					<span for="valor" class="block_left__group__text">R$</span>
+					<input name="valor" type="number" min="0" max="4000" value="490" class="block_left__group__number-form-first" data-js="pagamento"
+					/>
+				</div>
+				<div class="form-group">
+					<label for="socios" class="align-center block_left__group__text-description">Quantos sócios têm sua empresa?</label>
+					<input name- "socios" type="number" min="0" max="10" value="1" class="block_left__group__number-form" data-js="socios" />
+				</div>
+				<div class="form-group">
+					<label for="funcionarios" class="align-center block_left__group__text-description">Quantos funcionários?</label>
+					<input name="funcionarios" type="number" min="0" max="10" value="0" class="block_left__group__number-form" data-js="funcionarios"
+					/>
+				</div>
 
-				<span class="block_left__group__text">R$</span>
-				<input type="number" min="0" max="4000" value="490" class="block_left__group__number-form-first" data-js="pagamento" />
-
-
-				<p class="align-center block_left__group__text-description">Quantos sócios têm sua empresa?</p>
-				<input type="number" min="0" max="10" value="1" class="block_left__group__number-form" data-js="socios" />
-
-
-				<p class="align-center block_left__group__text-description">Quantos funcionários?</p>
-				<input type="number" min="0" max="10" value="0" class="block_left__group__number-form" data-js="funcionarios" />
-
-				<p class="align-center block_left__group__text-description	">Qual o faturamento mensal?</p>
-				<div class="flex-center mt20px">
-					<select data-js="selection" class="select SlectBox">
-						<option value="1">até R$25.000/mês</option>
-						<option value="2">de R$25.000 até R$50.000/mês</option>
-						<option value="3">de R$50.000 até R$100.000/mês</option>
-						<option value="4">de R$100.000 até R$150.000/mês</option>
-						<option value="5">de R$150.000 até R$200.000/mês</option>
-						<option value="6">acima de R$$200.000/mês</option>
-					</select>
+				<div class="form-group">
+					<label for="faturamento" class="align-center block_left__group__text-description	">Qual o faturamento mensal?</label>
+					<div class="flex-center mt20px">
+						<select name="faturamento" data-js="selection" class="select SlectBox">
+							<option value="1">até R$25.000/mês</option>
+							<option value="2">de R$25.000 até R$50.000/mês</option>
+							<option value="3">de R$50.000 até R$100.000/mês</option>
+							<option value="4">de R$100.000 até R$150.000/mês</option>
+							<option value="5">de R$150.000 até R$200.000/mês</option>
+							<option value="6">acima de R$$200.000/mês</option>
+						</select>
+					</div>
 				</div>
 				<div class="block_left__group">
 					<p class="align-center block_left__about__group__text">Preencha com os dados de sua empresa e veja ao lado sua economia.</p>
@@ -91,11 +96,11 @@
 					</div>
 				</div>
 
-				<div class="block__right__about mt20px">
+				<div class="block__right__about">
 					<h3 class="align-center block-right__about__title">Não combramos 13º</h3>
 					<P class="block-right__about__subtitle">Não precisamos de nenhuma informação do seu contador atual para o cadastro.</P>
 					<p class="align-center margint20">
-						<button class="btn btn-blue">O que está incluso?</button>
+						<button class="btn btn--blue">O que está incluso?</button>
 					</p>
 				</div>
 			</div>

@@ -1,0 +1,63 @@
+.calc__body__block-right {
+    min-height: 500px;
+    width: 30%;
+    @media(max-width: $hight) {
+        width:40%;
+        margin-right: 0px;
+    }
+    @media(max-width: $medium) {
+        width: 80%;
+        margin-top: 50px;
+    }
+}
+
+.block__right__economy {
+    background-color: white;
+    min-height: 150px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 50px 0 50px 0;
+    height: auto;
+
+}
+
+.block__right__mensality {
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: white;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 50px 0 50px 0;
+    width: 90%;
+    min-height: 150px;
+}
+
+.right__economy__text-opacity {
+    text-align: center;
+    opacity: .8;
+}
+
+.block__right__economy__value {
+    font-weight: 400;
+    font-size: 52px;
+    color: #424242;
+    position: relative;
+    top: 20px;
+    @media(max-width: $medium) {
+        top: 10px;
+        font-size: 40px !important;
+    }
+    @media(max-width: $low) {
+        font-size: 30px !important;
+    }
+}
+
+.block-right__about__subtitle {
+    color: white;
+    opacity: .8;
+    font-size: 14px;
+    width: auto;
+    line-height: 30px;
+    text-align: center;
+}

@@ -1,0 +1,64 @@
+.opacity8 {
+    opacity: .8
+}
+
+.align-center {
+    text-align: center;
+}
+
+.margint20 {
+    margin-top: 70px;
+}
+
+.SlectBox {
+    color: #424242 !important;
+    font-size: 14px !important;
+}
+
+.flex-center {
+    widows: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.radioCheck {
+    color: #424242 !important;
+    font-weight: bold;
+}
+
+
+.div__check {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.money {
+    color: #424242;
+    font-weight: bold;
+}
+
+.block__icon{
+    float: left;
+    margin-top: 20px;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.block__icon__icon-like{
+    color: #2196F3;
+    font-size: 1.4em;
+}
+.block__icon__icon-money{
+    color: #0EDC16;
+    font-size: 1.4em;
+}
+.mt20px{
+    margin-top: 20px;
+}

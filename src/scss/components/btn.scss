@@ -1,0 +1,19 @@
+.btn {
+    border: none;
+    font-family: "Helvetica";
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.btn--blue {
+    background-color: #1BA4F4;
+    padding: 17px 30px;
+    color: white;
+    text-transform: uppercase;
+    transition: .4s all ease;
+    &:hover {
+        background-color: steelblue;
+    }
+}
