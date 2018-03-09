@@ -39,8 +39,11 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     font-weight: bolder;
-    @media(max-width: $low) {
-        font-weight: 300;
+    @media(max-width: $medium) {
+        font-size: 14px;
+    }
+    @media(max-width: 1090px) {
+        font-size: 12px;
     }
   }
   

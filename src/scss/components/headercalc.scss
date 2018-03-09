@@ -3,22 +3,26 @@
     font-weight: 600;
     text-align: center;
     font-size: 29px;
-    font-family: "WorkSansbold";
-    min-height: 60px;
-    margin-top: 20px;
+    margin: 40px 0 20px 0;
+    @media(max-width: $medium) {
+        font-size: 25px;
+    }
 }
 
 .calc__header__subtitle {
     color: #fafafa;
     font-size: 18px;
     opacity: .8;
-    font-family: "Helvetica";
     min-height: 40px;
+    @media(max-width: $medium) {
+        font-size: 14px;
+        text-align: center;
+    }
 }
 
 .block-right__about__title {
     color: white;
     font-weight: 300;
     font-size: 18px;
-    font-family: "WorkSans";
+
 }

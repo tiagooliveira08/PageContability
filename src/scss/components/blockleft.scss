@@ -1,6 +1,6 @@
 .calc__body__block-left {
     background-color: #fff;
-    min-height: 600px;
+    min-height: auto;
     width: 30%;
     border-radius: 6px;
     padding: 20px 1%;
@@ -14,6 +14,7 @@
     }
     @media(max-width: $low) {
         width: 100%;
+        border-radius: 0px;
         
     }
 }
@@ -43,7 +44,7 @@
 .form-group{
     margin-top: 5px;
     display: inline-block;
-    width: 100%;
+    width: 98%;
 }
 
 .block_left__group__number-form-first {

@@ -58,7 +58,6 @@
 
         for (var i = 1; i < $sociosValue.value; i++) {
             mensalidadeSimples += 30;
-            console.log(valorAdicionarSocios);
         }
         for (var i = 0; i < $funcionariosValue.value; i++) {
             mensalidadeSimples += 50;
@@ -66,7 +65,6 @@
 
         for (var i = 1; i < $(".SlectBox").val(); i++) {
             mensalidadeSimples += 120;
-            console.log(mensalidadeSimples);
         }
 
         var mensalidadeSimplesMult = mensalidadeSimples * 12;
