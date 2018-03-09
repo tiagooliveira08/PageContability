@@ -5,8 +5,6 @@ $low: 400px;
 
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
 }
 
 
@@ -19,7 +17,7 @@ $low: 400px;
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     font-family: "Helvetica";
 }
 
